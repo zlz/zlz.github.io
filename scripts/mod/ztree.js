@@ -1,7 +1,6 @@
 define(['jquery'], function ($) {
-    var fn = function (dt, el) {
-        var data = $.parseJSON(dt).expa,
-            htmStr = "",
+    var fn = function (data, el) {
+        var htmStr = "",
             $tree = $(el),
             setTree,
             flodTree;

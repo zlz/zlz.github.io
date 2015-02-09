@@ -1,7 +1,6 @@
 define(['jquery'], function ($) {
-    var fn = function (dt, $e) {
+    var fn = function (data, $e) {
         var $body = $('body'),
-            data = $.parseJSON(dt).data,
             len = data.length,
             $clone;
         (function () {

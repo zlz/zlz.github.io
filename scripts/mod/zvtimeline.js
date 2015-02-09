@@ -1,7 +1,6 @@
 define(['jquery'], function ($) {
-    var fn = function (msg) {
-        var data = $.parseJSON(msg).db,
-            htmStr = "",
+    var fn = function (data) {
+        var htmStr = "",
             i,
             len = data.length;
         for (i = 0; len > i; i = i + 1) {
