@@ -1,12 +1,11 @@
 define(['jquery'], function ($) {
-    return function (msg, mkr, mov, objEvt) {
+    var fn = function (msg, mkr, mov, objEvt) {
         var $win = $(window),
             $doc = $(document),
             $obj = $(objEvt.currentTarget),
             $mk,
             mStart,
-            mMove,
-            M = this;
+            mMove;
         mStart = function () {
             var mpos = [],
                 mw,
@@ -38,8 +37,7 @@ define(['jquery'], function ($) {
                 mMove();
             }
         };
-        M.mEnd = function () {
-            $(".mk").remove();
+        fn.mEnd = function () {
             $doc.off("click.mk");
             document.body.style.MozUserSelect = "-moz-all";
             document.body.onselectstart = function () {
@@ -48,6 +46,7 @@ define(['jquery'], function ($) {
             document.body.ondragstart = function () {
                 return true;
             };
+            $(".mk").remove();
         };
         mMove = function () {
             document.body.style.MozUserSelect = "none";
@@ -72,21 +71,34 @@ define(['jquery'], function ($) {
         };
         if (objEvt.type === "click") {
             $doc.off("click.mk").on("click.mk", function (evt) {
+                //evt.preventDefault();
                 if (evt.target === $obj[0]) {
                     mStart();
                 } else {
-                    if ($(evt.target).parents(".mk")[0] !== undefined || $(evt.target)[0] === $(".mk")[0]) {
-                        return;
+                    if ($(evt.target)[0] === $(".msend")[0]) {
+                        evt.preventDefault();
+                        if (typeof fn.todo === 'function') {
+                            fn.todo();
+                        }
+                        fn.mEnd();
+                    } else if ($(evt.target)[0] === $(".mend")[0]) {
+                        evt.preventDefault();
+                        fn.mEnd();
+                    } else {
+                        if ($(evt.target).parents(".mk")[0] !== undefined || $(evt.target)[0] === $(".mk")[0]) {
+                            return;
+                        }
+                        fn.mEnd();
                     }
-                    M.mEnd();
                 }
             });
         }
         if (objEvt.type === "mouseover") {
             mStart();
             $(objEvt.currentTarget).on("mouseout", function () {
-                M.mEnd();
+                fn.mEnd();
             });
         }
     };
+    return fn;
 });

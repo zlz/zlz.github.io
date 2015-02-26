@@ -9,7 +9,9 @@
     require.config({
         baseUrl: "./scripts",
         paths: {
-            "jquery": "lib/jquery-1.11.2.min"
+            "jquery": "lib/jquery-1.11.2.min",
+            "mod": "./mod",
+            "app": "./app"
         }
     });
     require(['jquery'], function ($) {
@@ -60,7 +62,7 @@
                 zdashboard();
             });
         }
-        if ($(".mk1")[0]) {
+        if ($(".mkr")[0]) {
             loadCss("./css/zmarker.css");
             loadCss("./css/zvtimeline.css");
             require(['mod/zmarker', 'mod/zvtimeline'], function (zmarker, zvtimeline) {
