@@ -1,6 +1,7 @@
-define(['jquery'], function ($) {
+(function (define) {
     var fn = function (sld, spdb) {
-        var spda = 450,
+        var $ = fn.$ || jQuery,
+            spda = 450,
             data = fn.data,
             i,
             len,
@@ -105,5 +106,12 @@ define(['jquery'], function ($) {
             viewWidth = sld.innerWidth();
         });
     };
-    return fn;
-});
+    if (typeof define === 'function' && define.amd) {
+        define(['jquery'], function ($) {
+            fn.$ = $;
+            return fn;
+        });
+    } else {
+        window.zslide = fn;
+    }
+}(window.define));

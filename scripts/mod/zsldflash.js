@@ -1,6 +1,7 @@
-define(['jquery'], function ($) {
+(function (define) {
     var fn = function (sld, spdb) {
-        var spda = 250,
+        var $ = fn.$ || jQuery,
+            spda = 250,
             data = fn.data,
             step = 0,
             len = data.length,
@@ -36,5 +37,12 @@ define(['jquery'], function ($) {
             }
         });
     };
-    return fn;
-});
+    if (typeof define === 'function' && define.amd) {
+        define(['jquery'], function ($) {
+            fn.$ = $;
+            return fn;
+        });
+    } else {
+        window.zsldflash = fn;
+    }
+}(window.define));

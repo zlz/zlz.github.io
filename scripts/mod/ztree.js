@@ -1,6 +1,7 @@
-define(['jquery'], function ($) {
+(function (define) {
     var fn = function (data, el) {
-        var htmStr = "",
+        var $ = fn.$ || jQuery,
+            htmStr = "",
             $tree = $(el),
             setTree,
             flodTree;
@@ -73,5 +74,12 @@ define(['jquery'], function ($) {
             }
         });
     };
-    return fn;
-});
+    if (typeof define === 'function' && define.amd) {
+        define(['jquery'], function ($) {
+            fn.$ = $;
+            return fn;
+        });
+    } else {
+        window.zmarker = fn;
+    }
+}(window.define));

@@ -1,5 +1,6 @@
-define(['jquery'], function ($) {
+(function (define) {
     var fn = function () {
+        var $ = fn.$ || jQuery;
         $(document).on("mouseover.menu", function (evt) {
             var $obj = $(evt.target);
             if ($obj.hasClass("nav-menu")) {
@@ -28,5 +29,12 @@ define(['jquery'], function ($) {
             }
         });
     };
-    return fn();
-});
+    if (typeof define === 'function' && define.amd) {
+        define(['jquery'], function ($) {
+            fn.$ = $;
+            return fn;
+        });
+    } else {
+        window.zmenu = fn;
+    }
+}(window.define));

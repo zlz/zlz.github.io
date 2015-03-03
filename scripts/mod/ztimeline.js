@@ -1,6 +1,7 @@
-define(['jquery'], function ($) {
+(function (define) {
     var fn = function (data, $e) {
-        var $body = $('body'),
+        var $ = fn.$ || jQuery,
+            $body = $('body'),
             len = data.length,
             $clone;
         (function () {
@@ -33,5 +34,12 @@ define(['jquery'], function ($) {
             });
         }());
     };
-    return fn;
-});
+    if (typeof define === 'function' && define.amd) {
+        define(['jquery'], function ($) {
+            fn.$ = $;
+            return fn;
+        });
+    } else {
+        window.ztimeline = fn;
+    }
+}(window.define));

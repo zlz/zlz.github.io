@@ -3,9 +3,10 @@
     baseUrl: './scripts',
     dir: './build',
     paths: {
+        "cyan": "mod/cyan",
         "jquery": "lib/jquery/jquery-1.11.2.min",
         "zslide": "mod/zslide",
-        "zslide-flash": "mod/zslide-flash",
+        "zsldflash": "mod/zsldflash",
         "zdashboard": "mod/zdashboard",
         "zmarker": "mod/zmarker",
         "zvtimeline": "mod/zvtimeline",

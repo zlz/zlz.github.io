@@ -1,6 +1,7 @@
-define(['jquery'], function ($) {
+(function (define) {
     var fn = function () {
-        var $doc = $(document),
+        var $ = fn.$ || jQuery,
+            $doc = $(document),
             existEl = function (evt, elCn) {
                 if ($(evt.target).parents(elCn)[0] !== undefined) {
                     return $(evt.target).parents(elCn).eq(0);
@@ -76,5 +77,12 @@ define(['jquery'], function ($) {
             }
         });
     };
-    return fn;
-});
+    if (typeof define === 'function' && define.amd) {
+        define(['jquery'], function ($) {
+            fn.$ = $;
+            return fn;
+        });
+    } else {
+        window.zdashboard = fn;
+    }
+}(window.define));

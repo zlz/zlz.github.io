@@ -1,6 +1,7 @@
-define(['jquery'], function ($) {
+(function (define) {
     var fn = function (data) {
-        var htmStr = "",
+        var $ = fn.$ || jQuery,
+            htmStr = "",
             i,
             len = data.length;
         for (i = 0; len > i; i = i + 1) {
@@ -13,5 +14,12 @@ define(['jquery'], function ($) {
         htmStr = '<ul class="vtl">' + htmStr + "</ul>";
         return htmStr;
     };
-    return fn;
-});
+    if (typeof define === 'function' && define.amd) {
+        define(['jquery'], function ($) {
+            fn.$ = $;
+            return fn;
+        });
+    } else {
+        window.zmarker = fn;
+    }
+}(window.define));

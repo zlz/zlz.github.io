@@ -1,6 +1,7 @@
-define(['jquery'], function ($) {
+(function (define) {
     var fn = function (id, dire, s, spdb) {
-        var sld = $("." + id),
+        var $ = fn.$ || jQuery,
+            sld = $("." + id),
             spda = 450,
             rolla = sld.find(".sld-a"),
             len = rolla.find(".sld-roll").length,
@@ -49,5 +50,12 @@ define(['jquery'], function ($) {
             animateB = window.setInterval(animateA, spdb);
         });
     };
-    return fn;
-});
+    if (typeof define === 'function' && define.amd) {
+        define(['jquery'], function ($) {
+            fn.$ = $;
+            return fn;
+        });
+    } else {
+        window.zslddire = fn;
+    }
+}(window.define));

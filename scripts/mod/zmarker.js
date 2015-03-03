@@ -1,6 +1,7 @@
-define(['jquery'], function ($) {
+(function (define) {
     var fn = function (msg, mkr, mov, objEvt) {
-        var $win = $(window),
+        var $ = fn.$ || jQuery,
+            $win = $(window),
             $doc = $(document),
             $obj = $(objEvt.currentTarget),
             $mk,
@@ -100,5 +101,12 @@ define(['jquery'], function ($) {
             });
         }
     };
-    return fn;
-});
+    if (typeof define === 'function' && define.amd) {
+        define(['jquery'], function ($) {
+            fn.$ = $;
+            return fn;
+        });
+    } else {
+        window.zmarker = fn;
+    }
+}(window.define));
