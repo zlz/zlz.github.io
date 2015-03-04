@@ -13,6 +13,7 @@ css/login.css
 
 css/style.css
 ----------------
+css/../css/common.css
 css/style.css
 
 css/zdashboard.css
@@ -175,3 +176,36 @@ scripts/mod/ztimeline.js
 scripts/mod/ztree.js
 scripts/mod/cyan.js
 scripts/main.js
+
+scripts/mod/cyan.js
+----------------
+scripts/mod/cyan.js
+
+scripts/mod/zslide.js
+----------------
+scripts/mod/zslide.js
+
+scripts/mod/zsldflash.js
+----------------
+scripts/mod/zsldflash.js
+
+scripts/mod/zdashboard.js
+----------------
+scripts/mod/zdashboard.js
+
+scripts/mod/zmarker.js
+----------------
+scripts/mod/zmarker.js
+
+scripts/mod/zvtimeline.js
+----------------
+scripts/mod/zvtimeline.js
+
+scripts/mod/ztimeline.js
+----------------
+scripts/mod/ztimeline.js
+
+scripts/mod/ztree.js
+----------------
+scripts/lib/jquery/jquery-1.11.2.min.js
+scripts/mod/ztree.js

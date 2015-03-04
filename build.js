@@ -15,8 +15,31 @@
     },
     modules: [{
         name: 'main'
+    }, {
+        name: 'cyan'
+    }, {
+        name: 'zslide',
+        exclude: ['jquery']
+    }, {
+        name: 'zsldflash',
+        exclude: ['jquery']
+    }, {
+        name: 'zdashboard',
+        exclude: ['jquery']
+    }, {
+        name: 'zmarker',
+        exclude: ['jquery']
+    }, {
+        name: 'zvtimeline',
+        exclude: ['jquery']
+    }, {
+        name: 'ztimeline',
+        exclude: ['jquery']
+    }, {
+        name: 'ztree',
+        exclude: ['jquery']
     }],
-    fileExclusionRegExp: /^(r|build)\.js$|^.git|^Source|^README\.md|^CNAME/,
+    fileExclusionRegExp: /^(r|build)\.js$|^\.git|^Source|^README\.md|^CNAME/,
     optimizeCss: 'standard',
     removeCombined: true
 })

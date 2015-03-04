@@ -42,28 +42,30 @@
 <script type="text/javascript" src="./scripts/mod/zslide.js"></script>
 <script type="text/javascript" src="./scripts/mod/cyan.js"></script>
 <script type="text/javascript">
-    if ($(".sld")[0]) {
-        var source = 'http://platform.sina.com.cn/slide/album',
-            jqXHR = $.ajax({
-                async: true,
-                url: source,
-                dataType: "jsonp",
-                jsonpCallback: "jcb",
-                data: {
-                    "app_key": "3656193992",
-                    "jsoncallback": "jcb",
-                    "format": "json",
-                    "ch_id": "1",
-                    "num": "10",
-                    "size": "img",
-                    "sub_ch": "y"
-                }
-            });
-        jqXHR.done(function (json) {
-            zslide.data = json.data;
-            zslide($(".sld"), 3000);
+if ($(".sld")[0]) {
+    var source = 'http://platform.sina.com.cn/slide/album',
+        jqXHR = $.ajax({
+            async: true,
+            url: source,
+            dataType: "jsonp",
+            jsonpCallback: "jcb",
+            data: {
+                "app_key": "3656193992",
+                "jsoncallback": "jcb",
+                "format": "json",
+                "ch_id": "1",
+                "num": "10",
+                "size": "img",
+                "sub_ch": "y"
+            }
         });
-    }
-    cyan.pop("msg");
+    jqXHR.done(function(json) {
+        zslide.data = json.data;
+        zslide($(".sld"), 3000);
+    });
+}
+cyan.pop("msg");
 </script>
+
+
 </html>

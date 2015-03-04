@@ -70,7 +70,8 @@
         return gs;
     };
     cyan.cssLoaded = function (url, callback) {
-        var node = document.createElement("link"), poll;
+        var node = document.createElement("link"),
+            poll;
         node.type = "text/css";
         node.rel = "stylesheet";
         node.href = url;
