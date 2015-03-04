@@ -1,7 +1,7 @@
 (function (define) {
-    var fn = function (sld, spdb) {
+    var fn = function (sld, spdb, w) {
         var $ = fn.$ || jQuery,
-            spda = 250,
+            spda = 150,
             data = fn.data,
             step = 0,
             len = data.length,
@@ -10,7 +10,10 @@
         if (data.length === 0) {
             return false;
         }
-        sld.html('<a href="' + data[step].link + '" target="_blank">' + data[step].title + '</a>').css("display", "block");
+        sld.html('<a href="' + data[step].link + '" target="_blank">' + data[step].title + '</a>').css({
+            "display": "inline-block",
+            "width": w + "px"
+        });
         step = step + 1;
         animA = function () {
             sld.animate({
@@ -18,7 +21,7 @@
             }, spda, 'swing', function () {
                 sld.html('<a href="' + data[step].link + '" target="_blank">' + data[step].title + '</a>');
                 sld.animate({
-                    width: '100%'
+                    width: w
                 }, spda, 'swing', function () {
                     step = step + 1;
                     if (step === len) {

@@ -53,7 +53,7 @@
                         });
                     jqXHR.done(function (json) {
                         zsldflash.data = json.query.results.item;
-                        zsldflash($(".sldflash"), 2500);
+                        zsldflash($(".sldflash"), 3000, 500);
                     });
                 });
             });
