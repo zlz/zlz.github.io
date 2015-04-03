@@ -3,6 +3,10 @@ css/common.css
 ----------------
 css/common.css
 
+css/common.z.css
+----------------
+css/common.z.css
+
 css/font-awesome.min.css
 ----------------
 css/font-awesome.min.css
@@ -68,6 +72,22 @@ demo/app/css/style.css
 ----------------
 demo/app/css/style.css
 
+demo/autoworld/css/font-awesome.min.css
+----------------
+demo/autoworld/css/font-awesome.min.css
+
+demo/autoworld/css/style.css
+----------------
+demo/autoworld/css/style.css
+
+demo/autoworld/css/swiper.min.css
+----------------
+demo/autoworld/css/swiper.min.css
+
+demo/autoworld/css/ui-dialog.css
+----------------
+demo/autoworld/css/ui-dialog.css
+
 demo/ly/css/activities.css
 ----------------
 demo/ly/css/activities.css
@@ -207,5 +227,4 @@ scripts/mod/ztimeline.js
 
 scripts/mod/ztree.js
 ----------------
-scripts/lib/jquery/jquery-1.11.2.min.js
 scripts/mod/ztree.js

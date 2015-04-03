@@ -25,7 +25,7 @@ a.tt1:hover { color: #cd3804; border-color: #cd3804 }
 .page .i { margin-right: 20px }
 .page .s { margin: 0 3px }
 .page .s1 { float: left }
-.page .ipt { border: 1px solid #E6E6E6; height: 20px; width: 20px; line-height: 20px; vertical-align: middle; padding: 0 3px }
+.page .pg-ipt { border: 1px solid #E6E6E6; height: 20px; width: 20px; line-height: 20px; vertical-align: middle; padding: 0 3px }
 .stry { padding: 30px; line-height: 2 }
 .stry-tt { color: #161823 }
 .stry-tt1 { color: #0056C2 }
